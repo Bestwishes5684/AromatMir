@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
-// If you have enabled NRTs for your project, then un-comment the following line:
-// #nullable disable
-
-namespace AromatMir.Model
+namespace AromatMir.ModelResponce
 {
-    public partial class Product
+    public class ProductResponce
     {
-        public Product()
-        {
-            OrderProduct = new HashSet<OrderProduct>();
-        }
 
         public string ProductArticleNumber { get; set; }
         public string ProductName { get; set; }
@@ -25,6 +20,5 @@ namespace AromatMir.Model
         public int ProductQuantityInStock { get; set; }
         public string ProductStatus { get; set; }
 
-        public virtual ICollection<OrderProduct> OrderProduct { get; set; }
     }
 }

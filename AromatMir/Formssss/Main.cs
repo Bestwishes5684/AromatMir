@@ -16,5 +16,11 @@ namespace AromatMir.Formssss
         {
             InitializeComponent();
         }
+
+        private void Authorization_BTN_Click(object sender, EventArgs e)
+        {
+            ATH aTH = new ATH();    
+            aTH.ShowDialog();   
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using AromatMir.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -6,13 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace AromatMir.DbContext
+namespace AromatMir.DbContextT
 {
     public partial class TradeContext : DbContext
     {
-        public TradeContext()
-        {
-        }
+    
 
         public TradeContext(DbContextOptions<TradeContext> options)
             : base(options)
@@ -26,14 +25,7 @@ namespace AromatMir.DbContext
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<User> User { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=gogs.wsr.ru; Database=Trade;Integrated Security=false; User Id=1332-20; password=xYzUhLaa");
-            }
-        }
+    
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
