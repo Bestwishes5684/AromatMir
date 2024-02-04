@@ -21,7 +21,7 @@ namespace AromatMir.Model
         public int OrderPickupPoint { get; set; }
         public string FioClient { get; set; }
         public string CodeGive { get; set; }
-        public string OrderStatus { get; set; }
+        public bool OrderStatus { get; set; }
         public int CountOrder { get; set; }
 
         public virtual PickupPoint OrderPickupPointNavigation { get; set; }

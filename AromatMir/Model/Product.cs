@@ -18,12 +18,12 @@ namespace AromatMir.Model
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
         public string ProductCategory { get; set; }
-        public Image ProductPhoto { get; set; }
+        public byte[] ProductPhoto { get; set; }
         public string ProductManufacturer { get; set; }
         public decimal ProductCost { get; set; }
-        public byte? ProductDiscountAmount { get; set; }
+        public decimal? ProductDiscountAmount { get; set; }
         public int ProductQuantityInStock { get; set; }
-        public string ProductStatus { get; set; }
+        public bool ProductStatus { get; set; }
 
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
     }

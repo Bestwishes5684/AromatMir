@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace AromatMir.Formssss
 {
-    public partial class Main : Form
+    public partial class EDITADDProduct : Form
     {
-        public Main()
+        public EDITADDProduct()
         {
             InitializeComponent();
-        }
-
-        private void Authorization_BTN_Click(object sender, EventArgs e)
-        {
-            ATH aTH = new ATH();    
-            aTH.ShowDialog();   
         }
     }
 }

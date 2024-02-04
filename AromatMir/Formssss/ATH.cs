@@ -1,14 +1,7 @@
 ﻿using AromatMir.DbContextT;
 using AromatMir.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
+using User = AromatMir.Model.User;
 
 namespace AromatMir.Formssss
 {
@@ -19,23 +12,53 @@ namespace AromatMir.Formssss
             InitializeComponent();
         }
 
-        TradeContext TradeContext = new TradeContext(); 
+
         private void button1_Click(object sender, EventArgs e)
         {
-           foreach(var user in TradeContext.User)
+            using (var db = new TradeContext(DataBaseHelper.Option()))
             {
-                if (user.UserLogin == textBox1.Text && user.UserPassword == textBox2.Text)
+                
+                var user = db.User.FirstOrDefault(x=>x.UserLogin == textBox1.Text && x.UserPassword==textBox2.Text);
+             
+                if (user == null)
                 {
-                    MessageBox.Show("Победа");
-                    AromMir aromMir = new AromMir();
-                    aromMir.Show(); 
-                }
-                else
-                {
-                    MessageBox.Show("Поражение");
+                    MessageBox.Show("Неправильный логин или пароль");
+                    return;
                 }
 
-            }
+                USER= user;
+
+              
+
+
+              
+                var aromMir = new AromMir();
+                this.Hide();
+                aromMir.ShowDialog();
+                this.Show();
+            
+           
+
+
+             }
+
+        }
+
+
+        public static User USER { get; set; }
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AromMir aromMir =new AromMir();
+            aromMir.Show();
+            USER = null;
         }
     }
 }
+
+
+
+
+
+

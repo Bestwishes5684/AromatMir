@@ -1,6 +1,6 @@
 ﻿namespace AromatMir.Formssss
 {
-    partial class AromMir
+    partial class EDITADDProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -28,43 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            label1Name = new Label();
             SuspendLayout();
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Location = new Point(-2, 161);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1126, 430);
-            flowLayoutPanel1.TabIndex = 0;
-            // 
-            // label1Name
-            // 
-            label1Name.AutoSize = true;
-            label1Name.Location = new Point(724, 9);
-            label1Name.Name = "label1Name";
-            label1Name.Size = new Size(115, 15);
-            label1Name.TabIndex = 1;
-            label1Name.Text = "Вы зашли как гость";
-            // 
-            // AromMir
+            // EDITADDProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1127, 589);
-            Controls.Add(label1Name);
-            Controls.Add(flowLayoutPanel1);
-            Name = "AromMir";
-            Text = "Ароматный мир ";
-            Load += AromMir_Load;
+            ClientSize = new Size(513, 450);
+            Name = "EDITADDProduct";
+            Text = "EDITADDProduct";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Label label1Name;
     }
 }

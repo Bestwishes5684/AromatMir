@@ -1,5 +1,5 @@
 ﻿using AromatMir.DbContextT;
-using AromatMir.ModelResponce;
+using AromatMir.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,28 +17,52 @@ namespace AromatMir.Formssss
         public AromMir()
         {
             InitializeComponent();
-            InitDataGrid();
+
+            Dostup();
+
         }
 
-        private void InitDataGrid()
-        {
-            using (var dbContext = new TradeContext(DataBaseHelper.Option()))
-            {
-                dataGridView1.DataSource = dbContext.Product.Select(x => new ProductResponce
-                {
-                    ProductArticleNumber = x.ProductArticleNumber,
-                    ProductName = x.ProductName,
-                    ProductDescription = x.ProductDescription,
-                    ProductCategory = x.ProductCategory,
-                    ProductPhoto = x.ProductPhoto,
-                    ProductManufacturer = x.ProductManufacturer,
-                    ProductCost = x.ProductCost,
-                    ProductDiscountAmount = x.ProductDiscountAmount,
-                    ProductQuantityInStock = x.ProductQuantityInStock,
-                    ProductStatus = x.ProductStatus,
 
-                }).ToList();
+        private void Dostup()
+        {
+            
+
+            if (ATH.USER == null)
+            {
+
+                label1Name.Enabled = false;
+                
             }
+            else
+            {
+                label1Name.Text = $"{ATH.USER.UserSurname} {ATH.USER.UserName} {ATH.USER.UserPatronymic} {ATH.USER.UserRole}";
+            }
+
+
+
+        }
+
+        private void AromMir_Load(object sender, EventArgs e)
+        {
+            using (var TradeContext = new TradeContext(DataBaseHelper.Option()))
+            {
+                var products = TradeContext.Product.ToList();
+                foreach (var product in products)
+                {
+
+                    var userControl = new UserControl1(product);
+                    userControl.Parent = flowLayoutPanel1;
+                    userControl.ImageChanged += UserControl_ImageChanged; ;
+                }
+            }
+
+
+
+        }
+
+        private void UserControl_ImageChanged(object? sender, (Product, byte[]) e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
