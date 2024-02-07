@@ -1,11 +1,13 @@
 ﻿using AromatMir.DbContextT;
 using AromatMir.Formssss;
 using AromatMir.Model;
+using System.Windows.Forms;
 
 namespace AromatMir
 {
     public partial class UserControl1 : UserControl
     {
+
         private readonly Product product1;
         private EventHandler<(Product, byte[])> onImageChanged;
         public UserControl1(Product product)
@@ -83,9 +85,9 @@ namespace AromatMir
                     db.SaveChanges();
                     this.Hide();
                 }
-                   
-                
-               
+
+
+
             }
 
 
@@ -93,10 +95,37 @@ namespace AromatMir
 
         private void Editbutton_Click(object sender, EventArgs e)
         {
-            EDITADDProduct eDITADDProduct = new EDITADDProduct();
-            eDITADDProduct.ShowDialog();
+            using (var db = new TradeContext(DataBaseHelper.Option()))
+            {
+                var productDb = db.Product.FirstOrDefault(x => x.ProductArticleNumber == product1.ProductArticleNumber);
+                var prodictEdit = new EDITADDProduct(productDb);
+                prodictEdit.Show();
+            };
         }
 
+        private void AddPhoto_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            var image = File.ReadAllBytes(openFileDialog1.FileName);
+            OnImageChanged?.Invoke(product1, image);
+            pictureBox1.Image = Image.FromStream(new MemoryStream(image));
+        }
+
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void Addbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public event Action<Product, byte[]> OnImageChanged;
         public event EventHandler<(Product, byte[])> ImageChanged
         {
             add

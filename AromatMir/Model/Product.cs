@@ -17,8 +17,8 @@ namespace AromatMir.Model
         public string ProductArticleNumber { get; set; }
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
-        public string ProductCategory { get; set; }
-        public byte[] ProductPhoto { get; set; }
+        public string? ProductCategory { get; set; }
+        public byte[]? ProductPhoto { get; set; }
         public string ProductManufacturer { get; set; }
         public decimal ProductCost { get; set; }
         public decimal? ProductDiscountAmount { get; set; }

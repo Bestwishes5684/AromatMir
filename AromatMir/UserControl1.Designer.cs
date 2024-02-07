@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            AddPhoto = new Button();
             Editbutton = new Button();
             Delbutton = new Button();
             Addbutton = new Button();
@@ -41,12 +42,14 @@
             DESC_lbl = new Label();
             NameLbl = new Label();
             pictureBox1 = new PictureBox();
+            openFileDialog1 = new OpenFileDialog();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(AddPhoto);
             panel1.Controls.Add(Editbutton);
             panel1.Controls.Add(Delbutton);
             panel1.Controls.Add(Addbutton);
@@ -64,9 +67,18 @@
             panel1.Size = new Size(838, 196);
             panel1.TabIndex = 1;
             // 
+            // AddPhoto
+            // 
+            AddPhoto.Location = new Point(708, 7);
+            AddPhoto.Name = "AddPhoto";
+            AddPhoto.Size = new Size(124, 44);
+            AddPhoto.TabIndex = 13;
+            AddPhoto.Text = "Добавить фотографию";
+            AddPhoto.UseVisualStyleBackColor = true;
+            AddPhoto.Click += AddPhoto_Click;
+            // 
             // Editbutton
             // 
-            Editbutton.Enabled = false;
             Editbutton.Location = new Point(716, 132);
             Editbutton.Name = "Editbutton";
             Editbutton.Size = new Size(116, 44);
@@ -94,6 +106,7 @@
             Addbutton.TabIndex = 10;
             Addbutton.Text = "Добавить в заказ";
             Addbutton.UseVisualStyleBackColor = true;
+            Addbutton.Click += Addbutton_Click;
             // 
             // Instock
             // 
@@ -178,6 +191,11 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.FileOk += openFileDialog1_FileOk;
+            // 
             // UserControl1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -206,5 +224,7 @@
         private Button Editbutton;
         private Button Delbutton;
         private Button Addbutton;
+        private Button AddPhoto;
+        private OpenFileDialog openFileDialog1;
     }
 }

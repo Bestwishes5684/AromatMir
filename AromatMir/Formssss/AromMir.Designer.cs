@@ -30,10 +30,12 @@
         {
             flowLayoutPanel1 = new FlowLayoutPanel();
             label1Name = new Label();
+            AddOrder = new Button();
             SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Location = new Point(-2, 161);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(1126, 430);
@@ -48,11 +50,22 @@
             label1Name.TabIndex = 1;
             label1Name.Text = "Вы зашли как гость";
             // 
+            // AddOrder
+            // 
+            AddOrder.Location = new Point(12, 12);
+            AddOrder.Name = "AddOrder";
+            AddOrder.Size = new Size(97, 43);
+            AddOrder.TabIndex = 2;
+            AddOrder.Text = "Добавить заказ";
+            AddOrder.UseVisualStyleBackColor = true;
+            AddOrder.Click += AddOrder_Click;
+            // 
             // AromMir
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1127, 589);
+            Controls.Add(AddOrder);
             Controls.Add(label1Name);
             Controls.Add(flowLayoutPanel1);
             Name = "AromMir";
@@ -66,5 +79,6 @@
 
         private FlowLayoutPanel flowLayoutPanel1;
         private Label label1Name;
+        private Button AddOrder;
     }
 }

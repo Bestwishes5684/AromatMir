@@ -17,7 +17,6 @@ namespace AromatMir.Formssss
         public AromMir()
         {
             InitializeComponent();
-
             Dostup();
 
         }
@@ -25,13 +24,13 @@ namespace AromatMir.Formssss
 
         private void Dostup()
         {
-            
+
 
             if (ATH.USER == null)
             {
 
                 label1Name.Enabled = false;
-                
+
             }
             else
             {
@@ -63,6 +62,17 @@ namespace AromatMir.Formssss
         private void UserControl_ImageChanged(object? sender, (Product, byte[]) e)
         {
             throw new NotImplementedException();
+        }
+
+        private void AddOrder_Click(object sender, EventArgs e)
+        {
+            EDITADDProduct eDITADDProduct = new EDITADDProduct();
+            eDITADDProduct.ShowDialog();
+
+
+            var prodict = new UserControl1(eDITADDProduct.product);
+            prodict.Parent = flowLayoutPanel1;
+
         }
     }
 }
