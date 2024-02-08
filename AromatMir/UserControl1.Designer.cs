@@ -28,185 +28,186 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            AddPhoto = new Button();
-            Editbutton = new Button();
-            Delbutton = new Button();
-            Addbutton = new Button();
-            Instock = new Label();
-            ProdusctStatus = new Label();
-            PriceLBL = new Label();
-            DISCLABL = new Label();
-            MANUFlabel = new Label();
-            Categ_LBL = new Label();
-            DESC_lbl = new Label();
-            NameLbl = new Label();
-            pictureBox1 = new PictureBox();
-            openFileDialog1 = new OpenFileDialog();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.AddPhoto = new System.Windows.Forms.Button();
+            this.Editbutton = new System.Windows.Forms.Button();
+            this.Delbutton = new System.Windows.Forms.Button();
+            this.Addbutton = new System.Windows.Forms.Button();
+            this.Instock = new System.Windows.Forms.Label();
+            this.ProdusctStatus = new System.Windows.Forms.Label();
+            this.PriceLBL = new System.Windows.Forms.Label();
+            this.DISCLABL = new System.Windows.Forms.Label();
+            this.MANUFlabel = new System.Windows.Forms.Label();
+            this.Categ_LBL = new System.Windows.Forms.Label();
+            this.DESC_lbl = new System.Windows.Forms.Label();
+            this.NameLbl = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(AddPhoto);
-            panel1.Controls.Add(Editbutton);
-            panel1.Controls.Add(Delbutton);
-            panel1.Controls.Add(Addbutton);
-            panel1.Controls.Add(Instock);
-            panel1.Controls.Add(ProdusctStatus);
-            panel1.Controls.Add(PriceLBL);
-            panel1.Controls.Add(DISCLABL);
-            panel1.Controls.Add(MANUFlabel);
-            panel1.Controls.Add(Categ_LBL);
-            panel1.Controls.Add(DESC_lbl);
-            panel1.Controls.Add(NameLbl);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(0, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(838, 196);
-            panel1.TabIndex = 1;
+            this.panel1.Controls.Add(this.AddPhoto);
+            this.panel1.Controls.Add(this.Editbutton);
+            this.panel1.Controls.Add(this.Delbutton);
+            this.panel1.Controls.Add(this.Addbutton);
+            this.panel1.Controls.Add(this.Instock);
+            this.panel1.Controls.Add(this.ProdusctStatus);
+            this.panel1.Controls.Add(this.PriceLBL);
+            this.panel1.Controls.Add(this.DISCLABL);
+            this.panel1.Controls.Add(this.MANUFlabel);
+            this.panel1.Controls.Add(this.Categ_LBL);
+            this.panel1.Controls.Add(this.DESC_lbl);
+            this.panel1.Controls.Add(this.NameLbl);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(0, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(838, 196);
+            this.panel1.TabIndex = 1;
             // 
             // AddPhoto
             // 
-            AddPhoto.Location = new Point(708, 7);
-            AddPhoto.Name = "AddPhoto";
-            AddPhoto.Size = new Size(124, 44);
-            AddPhoto.TabIndex = 13;
-            AddPhoto.Text = "Добавить фотографию";
-            AddPhoto.UseVisualStyleBackColor = true;
-            AddPhoto.Click += AddPhoto_Click;
+            this.AddPhoto.Enabled = false;
+            this.AddPhoto.Location = new System.Drawing.Point(708, 7);
+            this.AddPhoto.Name = "AddPhoto";
+            this.AddPhoto.Size = new System.Drawing.Size(124, 44);
+            this.AddPhoto.TabIndex = 13;
+            this.AddPhoto.Text = "Добавить фотографию";
+            this.AddPhoto.UseVisualStyleBackColor = true;
+            this.AddPhoto.Click += new System.EventHandler(this.AddPhoto_Click_1);
             // 
             // Editbutton
             // 
-            Editbutton.Location = new Point(716, 132);
-            Editbutton.Name = "Editbutton";
-            Editbutton.Size = new Size(116, 44);
-            Editbutton.TabIndex = 12;
-            Editbutton.Text = "Изменить товар";
-            Editbutton.UseVisualStyleBackColor = true;
-            Editbutton.Click += Editbutton_Click;
+            this.Editbutton.Enabled = false;
+            this.Editbutton.Location = new System.Drawing.Point(716, 132);
+            this.Editbutton.Name = "Editbutton";
+            this.Editbutton.Size = new System.Drawing.Size(116, 44);
+            this.Editbutton.TabIndex = 12;
+            this.Editbutton.Text = "Изменить товар";
+            this.Editbutton.UseVisualStyleBackColor = true;
+            this.Editbutton.Click += new System.EventHandler(this.Editbutton_Click_1);
             // 
             // Delbutton
             // 
-            Delbutton.Location = new Point(594, 132);
-            Delbutton.Name = "Delbutton";
-            Delbutton.Size = new Size(116, 44);
-            Delbutton.TabIndex = 11;
-            Delbutton.Text = "Удалить товар";
-            Delbutton.UseVisualStyleBackColor = true;
-            Delbutton.Click += Delbutton_Click;
+            this.Delbutton.Enabled = false;
+            this.Delbutton.Location = new System.Drawing.Point(594, 132);
+            this.Delbutton.Name = "Delbutton";
+            this.Delbutton.Size = new System.Drawing.Size(116, 44);
+            this.Delbutton.TabIndex = 11;
+            this.Delbutton.Text = "Удалить товар";
+            this.Delbutton.UseVisualStyleBackColor = true;
+            this.Delbutton.Click += new System.EventHandler(this.Delbutton_Click_1);
             // 
             // Addbutton
             // 
-            Addbutton.Enabled = false;
-            Addbutton.Location = new Point(464, 132);
-            Addbutton.Name = "Addbutton";
-            Addbutton.Size = new Size(124, 44);
-            Addbutton.TabIndex = 10;
-            Addbutton.Text = "Добавить в заказ";
-            Addbutton.UseVisualStyleBackColor = true;
-            Addbutton.Click += Addbutton_Click;
+            this.Addbutton.Location = new System.Drawing.Point(464, 132);
+            this.Addbutton.Name = "Addbutton";
+            this.Addbutton.Size = new System.Drawing.Size(124, 44);
+            this.Addbutton.TabIndex = 10;
+            this.Addbutton.Text = "Добавить в заказ";
+            this.Addbutton.UseVisualStyleBackColor = true;
             // 
             // Instock
             // 
-            Instock.AutoSize = true;
-            Instock.Location = new Point(414, 78);
-            Instock.Name = "Instock";
-            Instock.Size = new Size(38, 15);
-            Instock.TabIndex = 9;
-            Instock.Text = "label4";
+            this.Instock.AutoSize = true;
+            this.Instock.Location = new System.Drawing.Point(414, 78);
+            this.Instock.Name = "Instock";
+            this.Instock.Size = new System.Drawing.Size(38, 15);
+            this.Instock.TabIndex = 9;
+            this.Instock.Text = "label4";
             // 
             // ProdusctStatus
             // 
-            ProdusctStatus.AutoSize = true;
-            ProdusctStatus.Location = new Point(283, 161);
-            ProdusctStatus.Name = "ProdusctStatus";
-            ProdusctStatus.Size = new Size(58, 15);
-            ProdusctStatus.TabIndex = 8;
-            ProdusctStatus.Text = "Актуален";
+            this.ProdusctStatus.AutoSize = true;
+            this.ProdusctStatus.Location = new System.Drawing.Point(283, 161);
+            this.ProdusctStatus.Name = "ProdusctStatus";
+            this.ProdusctStatus.Size = new System.Drawing.Size(58, 15);
+            this.ProdusctStatus.TabIndex = 8;
+            this.ProdusctStatus.Text = "Актуален";
             // 
             // PriceLBL
             // 
-            PriceLBL.AutoSize = true;
-            PriceLBL.Location = new Point(283, 129);
-            PriceLBL.Name = "PriceLBL";
-            PriceLBL.Size = new Size(38, 15);
-            PriceLBL.TabIndex = 7;
-            PriceLBL.Text = "label4";
+            this.PriceLBL.AutoSize = true;
+            this.PriceLBL.Location = new System.Drawing.Point(283, 129);
+            this.PriceLBL.Name = "PriceLBL";
+            this.PriceLBL.Size = new System.Drawing.Size(38, 15);
+            this.PriceLBL.TabIndex = 7;
+            this.PriceLBL.Text = "label4";
             // 
             // DISCLABL
             // 
-            DISCLABL.AutoSize = true;
-            DISCLABL.Location = new Point(414, 51);
-            DISCLABL.Name = "DISCLABL";
-            DISCLABL.Size = new Size(38, 15);
-            DISCLABL.TabIndex = 6;
-            DISCLABL.Text = "label4";
+            this.DISCLABL.AutoSize = true;
+            this.DISCLABL.Location = new System.Drawing.Point(414, 51);
+            this.DISCLABL.Name = "DISCLABL";
+            this.DISCLABL.Size = new System.Drawing.Size(38, 15);
+            this.DISCLABL.TabIndex = 6;
+            this.DISCLABL.Text = "label4";
             // 
             // MANUFlabel
             // 
-            MANUFlabel.AutoSize = true;
-            MANUFlabel.Location = new Point(283, 104);
-            MANUFlabel.Name = "MANUFlabel";
-            MANUFlabel.Size = new Size(38, 15);
-            MANUFlabel.TabIndex = 5;
-            MANUFlabel.Text = "label4";
+            this.MANUFlabel.AutoSize = true;
+            this.MANUFlabel.Location = new System.Drawing.Point(283, 104);
+            this.MANUFlabel.Name = "MANUFlabel";
+            this.MANUFlabel.Size = new System.Drawing.Size(38, 15);
+            this.MANUFlabel.TabIndex = 5;
+            this.MANUFlabel.Text = "label4";
             // 
             // Categ_LBL
             // 
-            Categ_LBL.AutoSize = true;
-            Categ_LBL.Location = new Point(283, 78);
-            Categ_LBL.Name = "Categ_LBL";
-            Categ_LBL.Size = new Size(38, 15);
-            Categ_LBL.TabIndex = 4;
-            Categ_LBL.Text = "label3";
+            this.Categ_LBL.AutoSize = true;
+            this.Categ_LBL.Location = new System.Drawing.Point(283, 78);
+            this.Categ_LBL.Name = "Categ_LBL";
+            this.Categ_LBL.Size = new System.Drawing.Size(38, 15);
+            this.Categ_LBL.TabIndex = 4;
+            this.Categ_LBL.Text = "label3";
             // 
             // DESC_lbl
             // 
-            DESC_lbl.AutoSize = true;
-            DESC_lbl.Location = new Point(283, 51);
-            DESC_lbl.Name = "DESC_lbl";
-            DESC_lbl.Size = new Size(38, 15);
-            DESC_lbl.TabIndex = 3;
-            DESC_lbl.Text = "label2";
+            this.DESC_lbl.AutoSize = true;
+            this.DESC_lbl.Location = new System.Drawing.Point(283, 51);
+            this.DESC_lbl.Name = "DESC_lbl";
+            this.DESC_lbl.Size = new System.Drawing.Size(38, 15);
+            this.DESC_lbl.TabIndex = 3;
+            this.DESC_lbl.Text = "label2";
             // 
             // NameLbl
             // 
-            NameLbl.AutoSize = true;
-            NameLbl.FlatStyle = FlatStyle.Flat;
-            NameLbl.Location = new Point(283, 22);
-            NameLbl.Name = "NameLbl";
-            NameLbl.Size = new Size(38, 15);
-            NameLbl.TabIndex = 2;
-            NameLbl.Text = "label1";
+            this.NameLbl.AutoSize = true;
+            this.NameLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NameLbl.Location = new System.Drawing.Point(283, 22);
+            this.NameLbl.Name = "NameLbl";
+            this.NameLbl.Size = new System.Drawing.Size(38, 15);
+            this.NameLbl.TabIndex = 2;
+            this.NameLbl.Text = "label1";
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.D344Y7;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(219, 190);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Image = global::AromatMir.Properties.Resources.V324R5;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(219, 190);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // openFileDialog1
             // 
-            openFileDialog1.FileName = "openFileDialog1";
-            openFileDialog1.FileOk += openFileDialog1_FileOk;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // UserControl1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel1);
-            Name = "UserControl1";
-            Size = new Size(841, 202);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
+            this.Name = "UserControl1";
+            this.Size = new System.Drawing.Size(841, 202);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

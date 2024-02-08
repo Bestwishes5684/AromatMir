@@ -10,6 +10,8 @@ namespace AromatMir
 
         private readonly Product product1;
         private EventHandler<(Product, byte[])> onImageChanged;
+        public event Action<Product, byte[]> OnImageChanged;
+
         public UserControl1(Product product)
         {
             InitializeComponent();
@@ -34,9 +36,11 @@ namespace AromatMir
                 pictureBox1.Image = Image.FromStream(new MemoryStream(product.ProductPhoto));
 
             }
-
-
-
+            else
+            {
+              
+            }
+          
 
         }
 
@@ -52,10 +56,6 @@ namespace AromatMir
                 {
                     Addbutton.Enabled = true;
 
-
-
-
-
                 }
 
                 if (ATH.USER.UserRole == 2)
@@ -63,6 +63,7 @@ namespace AromatMir
                     Addbutton.Enabled = true;
                     Editbutton.Enabled = true;
                     Delbutton.Enabled = true;
+                    AddPhoto.Enabled= true;
                 }
             }
 
@@ -71,10 +72,43 @@ namespace AromatMir
 
         }
 
-        private void Delbutton_Click(object sender, EventArgs e)
+     
+       
+
+      
+
+        private void AddPhoto_Click_1(object sender, EventArgs e)
         {
+          
+                if (openFileDialog1.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
 
+                var image = File.ReadAllBytes(openFileDialog1.FileName);
+                OnImageChanged?.Invoke(product1, image);
+                pictureBox1.Image = Image.FromStream(new MemoryStream(image));
+            
+            
+        }
 
+        private void Editbutton_Click_1(object sender, EventArgs e)
+        {
+            using (var db = new TradeContext(DataBaseHelper.Option()))
+            {
+                var productDb = db.Product.FirstOrDefault(x => x.ProductArticleNumber == product1.ProductArticleNumber);
+                var prodictEdit = new EDITADDProduct(productDb);
+               var result= prodictEdit.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    db.SaveChanges();
+                    InitOrder(productDb);
+                }
+            };
+        }
+
+        private void Delbutton_Click_1(object sender, EventArgs e)
+        {
             using (TradeContext db = new TradeContext(DataBaseHelper.Option()))
             {
 
@@ -89,56 +123,6 @@ namespace AromatMir
 
 
             }
-
-
         }
-
-        private void Editbutton_Click(object sender, EventArgs e)
-        {
-            using (var db = new TradeContext(DataBaseHelper.Option()))
-            {
-                var productDb = db.Product.FirstOrDefault(x => x.ProductArticleNumber == product1.ProductArticleNumber);
-                var prodictEdit = new EDITADDProduct(productDb);
-                prodictEdit.Show();
-            };
-        }
-
-        private void AddPhoto_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() != DialogResult.OK)
-            {
-                return;
-            }
-
-            var image = File.ReadAllBytes(openFileDialog1.FileName);
-            OnImageChanged?.Invoke(product1, image);
-            pictureBox1.Image = Image.FromStream(new MemoryStream(image));
-        }
-
-        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
-
-        private void Addbutton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public event Action<Product, byte[]> OnImageChanged;
-        public event EventHandler<(Product, byte[])> ImageChanged
-        {
-            add
-            {
-                onImageChanged += value;
-            }
-            remove
-            {
-                onImageChanged -= value;
-            }
-        }
-
-
-
     }
 }

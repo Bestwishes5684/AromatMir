@@ -28,51 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            label1Name = new Label();
-            AddOrder = new Button();
-            SuspendLayout();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1Name = new System.Windows.Forms.Label();
+            this.AddOrder = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Location = new Point(-2, 161);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1126, 430);
-            flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(-2, 161);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1126, 430);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // label1Name
             // 
-            label1Name.AutoSize = true;
-            label1Name.Location = new Point(724, 9);
-            label1Name.Name = "label1Name";
-            label1Name.Size = new Size(115, 15);
-            label1Name.TabIndex = 1;
-            label1Name.Text = "Вы зашли как гость";
+            this.label1Name.AutoSize = true;
+            this.label1Name.Location = new System.Drawing.Point(724, 9);
+            this.label1Name.Name = "label1Name";
+            this.label1Name.Size = new System.Drawing.Size(115, 15);
+            this.label1Name.TabIndex = 1;
+            this.label1Name.Text = "Вы зашли как гость";
             // 
             // AddOrder
             // 
-            AddOrder.Location = new Point(12, 12);
-            AddOrder.Name = "AddOrder";
-            AddOrder.Size = new Size(97, 43);
-            AddOrder.TabIndex = 2;
-            AddOrder.Text = "Добавить заказ";
-            AddOrder.UseVisualStyleBackColor = true;
-            AddOrder.Click += AddOrder_Click;
+            this.AddOrder.Location = new System.Drawing.Point(12, 12);
+            this.AddOrder.Name = "AddOrder";
+            this.AddOrder.Size = new System.Drawing.Size(97, 43);
+            this.AddOrder.TabIndex = 2;
+            this.AddOrder.Text = "Добавить Товар";
+            this.AddOrder.UseVisualStyleBackColor = true;
+            this.AddOrder.Click += new System.EventHandler(this.AddOrder_Click_1);
             // 
             // AromMir
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1127, 589);
-            Controls.Add(AddOrder);
-            Controls.Add(label1Name);
-            Controls.Add(flowLayoutPanel1);
-            Name = "AromMir";
-            Text = "Ароматный мир ";
-            Load += AromMir_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1127, 589);
+            this.Controls.Add(this.AddOrder);
+            this.Controls.Add(this.label1Name);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Name = "AromMir";
+            this.Text = "Ароматный мир ";
+            this.Load += new System.EventHandler(this.AromMir_Load_1);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

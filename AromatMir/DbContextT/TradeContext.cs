@@ -18,12 +18,12 @@ namespace AromatMir.DbContextT
         {
         }
 
-        public virtual DbSet<Order> Order { get; set; }
-        public virtual DbSet<OrderProduct> OrderProduct { get; set; }
-        public virtual DbSet<PickupPoint> PickupPoint { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<Role> Role { get; set; }
-        public virtual DbSet<User> User { get; set; }
+        public  DbSet<Order> Order { get; set; }
+        public  DbSet<OrderProduct> OrderProduct { get; set; }
+        public  DbSet<PickupPoint> PickupPoint { get; set; }
+        public  DbSet<Product> Product { get; set; }
+        public  DbSet<Role> Role { get; set; }
+        public  DbSet<User> User { get; set; }
 
     
 
@@ -132,7 +132,6 @@ namespace AromatMir.DbContextT
                 entity.Property(e => e.ProductName).IsRequired();
 
                 entity.Property(e => e.ProductPhoto)
-                    .IsRequired()
                     .HasColumnType("image");
 
                 entity.Property(e => e.ProductStatus).IsRequired();
